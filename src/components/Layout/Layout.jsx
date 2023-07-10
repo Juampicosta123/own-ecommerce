@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <header className='flex items-center justify-between p-3 md:p-5 md:px-10 lg:px-20 text-[#032d60]'>
+      <header className='flex items-center justify-between p-3 md:p-5 md:px-10 lg:px-20 text-[#032d60] '>
         <Navigation />
         <RightNav
           isOpened={isOpened}

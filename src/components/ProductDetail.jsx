@@ -4,8 +4,11 @@ export default function ProductDetail({ product }) {
   const [quantity, setQuantity] = useState(1);
 
   const sixInterestOf = (product.newPrice / 6).toFixed(2);
-  const twelveInterestOf = (product.newPrice / 12 ).toFixed(2);
-  const shipping = product.newPrice * 0.03
+  const twelveInterestOf = (product.newPrice / 12).toFixed(2);
+  const shipping = product.newPrice * 0.03;
+  const discount = Math.floor(
+    ((product.oldPrice - product.newPrice) * 100) / product.oldPrice
+  );
 
   function addProductToCart() {
     product.quantity = quantity;
@@ -43,7 +46,22 @@ export default function ProductDetail({ product }) {
         <div className='flex flex-col md:border lg:border rounded w-[300px] md:w-[450px] md:h-[465px] lg:w-[465px]'>
           <div className='flex flex-col border-b-2 p-5 gap-3 md:px-10 lg:px-10'>
             <h4 className='font-bold text-xl'>{product.title}</h4>
-            <p className='text-xl'>${product.newPrice}</p>
+            <div className='flex gap-5'>
+              {product.oldPrice ? (
+                <div className='flex gap-2 items-center justify-center text-sm'>
+                  <p className='text-gray-400 line-through'>
+                    ${product.oldPrice}
+                  </p>
+                  <p className='text-xl'>${product.newPrice}</p>
+                  <p className='bg-red-600 text-white rounded p-1 font-semibold'>
+                    {discount}% OFF
+                  </p>
+                </div>
+              ) : (
+                <p className='text-xl'>${product.newPrice}</p>
+              )}
+            </div>
+
             <div className='flex flex-col gap-2'>
               <p className='font-semibold'>Our Promotions:</p>
 
@@ -115,7 +133,9 @@ export default function ProductDetail({ product }) {
               >
                 <path d='M15.03 7c.212 0 .397.137.468.333l.024.088.012 1.7h3.496c.113 0 .222.041.307.111l.059.058.045.06 2.21 3.591.343.6.003.01.003 4.604c0 .218-.13.41-.316.482l-.083.024-1.093.01-.005.071C20.411 20.01 19.391 21 18.181 21c-1.157 0-2.14-.907-2.305-2.094l-.017-.164-.005-.071h-5.498l-.005.071C10.26 20.01 9.24 21 8.03 21c-1.158 0-2.14-.907-2.305-2.094l-.017-.164-.005-.071H4.486a.488.488 0 0 1-.454-.33l-.023-.087L4 7.54c0-.1.028-.198.081-.285a.503.503 0 0 1 .254-.222l.081-.024L15.031 7Zm3.15 10.176c-.72 0-1.307.618-1.307 1.378 0 .76.586 1.379 1.308 1.379.72 0 1.308-.62 1.308-1.379 0-.76-.587-1.378-1.308-1.378Zm-10.15 0c-.722 0-1.309.618-1.309 1.378 0 .76.587 1.379 1.308 1.379.72 0 1.307-.62 1.307-1.379 0-.76-.586-1.378-1.307-1.378Zm12.983-3.092H15.54l.003 3.578h.468l.02-.048c.32-.813 1.015-1.368 1.834-1.483l.177-.018.134-.004c.879 0 1.674.512 2.073 1.319l.074.165.02.048h.67v-3.557Zm-6.482-6.04H4.972v9.597h.895l.02-.048c.367-.902 1.208-1.484 2.142-1.484.87 0 1.661.507 2.062 1.307l.075.163.019.047h4.356l-.01-9.583Zm1.005 2.106.003 2.97h5.062l-1.843-2.969h-3.222Z'></path>
               </svg>
-              <p className='text-gray-700 text-sm'>Shipping: <span className='font-semibold'>${shipping}</span> </p>
+              <p className='text-gray-700 text-sm'>
+                Shipping: <span className='font-semibold'>${shipping}</span>{' '}
+              </p>
             </div>
             <div className='flex items-center gap-5'>
               <svg

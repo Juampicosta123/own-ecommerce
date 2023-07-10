@@ -110,7 +110,9 @@ const CartMenu = forwardRef(function (props, ref) {
             </>
           ))
         ) : (
-          <p className='font-semibold mt-5'>There is no products in your cart</p>
+          <p className='font-semibold mt-5'>
+            There are no products in your cart
+          </p>
         )}
       </div>
     </div>

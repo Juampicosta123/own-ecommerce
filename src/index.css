@@ -3,5 +3,7 @@
 @tailwind utilities;
 :root {
   font-family: 'Poppins', sans-serif;
+}
+html {
   overflow-x: hidden;
 }
