@@ -1,0 +1,93 @@
+.user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cerulean);
+  position: absolute;
+  top: 110%;
+  z-index: 1;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.mobile-user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cerulean);
+  position: absolute;
+  top: 110%;
+  right: 0%;
+  z-index: 1;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.show-user{
+    display: block !important;
+}
+
+.hide-user{
+    display: none !important;
+}
+
+.logout-btn{
+    background-color: transparent;
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.login-form h5 {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 400;
+  margin: 20px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.login-form input {
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+}
+.login-form input:focus {
+  outline: 1px solid var(--gray);
+}
+
+.login-btn {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: var(--white-light);
+}
+
+.login-form p,
+.login-form a {
+  font-size: 0.9rem;
+  color: var(--white);
+}

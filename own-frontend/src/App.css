@@ -1,0 +1,18 @@
+:root {
+  --coral-pink: #fe938c;
+  --coral-pink-light: rgba(254, 148, 140, 0.663);
+  --desert-sand: #e6b89c;
+  --wheat: #ead2ac;
+  --cader-gray: #9cafb7;
+  --cerulean: #4281a4;
+  --cerulean-light: #4282a4e0;
+  --white: #fff;
+  --white-light: #eceaea;
+  --black: #141115;
+  --black-light: #141115d5;
+  --grey: #b3b3b3;
+  --grey-light: #b3b3b32f;
+  --ultra-violet: #564592;
+  --ultra-violet-light: #564592c4;
+  --white: #fff;
+}
