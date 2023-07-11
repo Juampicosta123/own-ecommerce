@@ -14,8 +14,8 @@ export default function Product() {
     <div>
       <Layout>
         <ProductDetail product={product} />
-        <RecommendedProducts />
-        <RecommendedProduct />
+        <RecommendedProducts category={product.category} />
+        <RecommendedProduct category={product.category} />
       </Layout>
     </div>
   );

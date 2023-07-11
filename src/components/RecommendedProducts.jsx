@@ -1,8 +1,11 @@
 import { cartProducts } from '../assets/mocks/products';
 
-const products = cartProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
+export default function RecommendedProducts({ category }) {
+  const products = cartProducts
+    .filter((product) => product.category === category)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 4);
 
-export default function RecommendedProducts() {
   return (
     <div className='hidden md:flex lg:flex flex-col p-10 lg:px-72 gap-2 mt-5'>
       <h5 className='text-3xl font-bold text-[#032d60]'>

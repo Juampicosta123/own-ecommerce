@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   function showCart() {
+    cartMenuRef?.current?.classList?.toggle('hidden');
     cartMenuRef?.current?.classList?.toggle('right-[-600px]');
     cartMenuRef?.current?.classList?.toggle('right-0');
     setIsOpened(!isOpened);

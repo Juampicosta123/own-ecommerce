@@ -11,6 +11,7 @@ const CartMenu = forwardRef(function (props, ref) {
   }, [localStorage.getItem('cart'), deleted]);
 
   function closeMenu() {
+    ref?.current?.classList?.toggle('hidden');
     ref?.current?.classList?.toggle('right-[-600px]');
     ref?.current?.classList?.toggle('right-0');
     props?.setIsOpened(!props.isOpened);
@@ -39,7 +40,7 @@ const CartMenu = forwardRef(function (props, ref) {
   return (
     <div
       ref={ref}
-      className='absolute top-0 h-screen w-screen md:w-80 bg-white z-10 right-[-600px] transition-right duration-300 flex flex-col align-center p-3 text-[#032d60] overflow-y-auto border shadow-xl'
+      className='absolute top-0 h-screen w-screen md:w-80 bg-white z-10 hidden right-[-600px] transition-right duration-300  flex-col align-center p-3 text-[#032d60] overflow-y-auto border shadow-xl'
     >
       <CloseIcon closeMenu={closeMenu} />
       <h5 className='text-lg font-bold text-center'>My Cart</h5>

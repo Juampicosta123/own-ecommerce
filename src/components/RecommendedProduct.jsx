@@ -1,8 +1,10 @@
 import { cartProducts } from '../assets/mocks/products';
 
-const product = cartProducts[0];
+export default function RecommendedProduct({ category }) {
+  const product = cartProducts
+    .filter((product) => product.category === category)
+    .sort(() => 0.5 - Math.random())[0];
 
-export default function RecommendedProduct() {
   let discount;
   if (product.oldPrice) {
     discount = Math.floor(
@@ -11,9 +13,7 @@ export default function RecommendedProduct() {
   }
   return (
     <div className='md:hidden lg:hidden flex flex-col p-10 lg:px-72 gap-2 mt-5'>
-      <h5 className='text-3xl font-bold text-[#032d60]'>
-        Recommended Product
-      </h5>
+      <h5 className='text-3xl font-bold text-[#032d60]'>Recommended Product</h5>
       <div className='grid grid-cols-1 gap-2'>
         <a
           href={`/product/${product.id}`}
