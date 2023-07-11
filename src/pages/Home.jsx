@@ -7,15 +7,16 @@ import MobileLimitedOffers from '../components/MobileLimitedOffers';
 import Search from '../components/Search';
 
 const Home = () => {
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('');
   const [sort, setSort] = useState('');
   return (
     <Layout>
       <MobileLimitedOffers />
       <LimitedOffers />
-      <Search />
+      <Search setSearch={setSearch} />
       <Filters setFilter={setFilter} setSort={setSort} />
-      <ListOfProducts filter={filter} sort={sort} />
+      <ListOfProducts filter={filter} sort={sort} search={search} />
     </Layout>
   );
 };

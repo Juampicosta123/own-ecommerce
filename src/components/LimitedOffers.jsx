@@ -7,17 +7,17 @@ export default function LimitedOffers() {
   let limit = useRef(4);
 
   function nextPage() {
-    if (prevLimit.current + 4 > limitedOffers.length) return;
+    if (prevLimit.current + 4 > limitedOffers.length - 4) return;
     prevLimit.current += 4;
     limit.current += 4;
     setOffers(limitedOffers.slice(prevLimit.current, limit.current));
   }
 
   function prevPage() {
-    if (prevLimit.current - 4 < 1) return;
+    if (prevLimit.current - 4 < 0) return;
     prevLimit.current -= 4;
     limit.current -= 4;
-    setOffers(limitedOffers.slice(prevLimit.current - 4, limit.current - 4));
+    setOffers(limitedOffers.slice(prevLimit.current, limit.current));
   }
 
   return (

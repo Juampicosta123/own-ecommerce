@@ -174,12 +174,7 @@ export default function ProductDetail({ product }) {
       </div>
       <div className='flex flex-col justify-center mt-5 px-4 w-full md:px-20 lg:px-96 gap-2'>
         <h5 className='text-2xl font-bold'>Description</h5>
-        <p className='w-full'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          nostrum nesciunt assumenda exercitationem doloremque voluptates odio,
-          tenetur quasi inventore rerum tempora quam itaque officia sed atque,
-          repudiandae ab, nam voluptate.
-        </p>
+        <p className='w-full'>{product.description}</p>
       </div>
     </div>
   );

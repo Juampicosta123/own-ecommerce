@@ -14,10 +14,10 @@ export default function MobileLimitedOffers() {
   }
 
   function prevPage() {
-    if (prevLimit.current - 2 < 1) return;
+    if (prevLimit.current - 2 < 0) return;
     prevLimit.current -= 2;
     limit.current -= 2;
-    setOffers(limitedOffers.slice(prevLimit.current - 4, limit.current - 4));
+    setOffers(limitedOffers.slice(prevLimit.current, limit.current));
   }
 
   return (
